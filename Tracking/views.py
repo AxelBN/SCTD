@@ -1,8 +1,18 @@
 from django.shortcuts import render
 from django.contrib import messages
 from Tracking import TrackTrack
+from site import SiteSite
 # Create your views here.
-
+def Site(request):
+    site = SiteSite(request.POST or None)
+    if site.is_valid():
+        site.save()
+        messages.success(request, 'Acachete')
+        site = SiteSite()
+    else:
+        messages.error(request, 'Muy mal')
+    context = {'site': site}
+    return render(request, 'site.html', context)
 def tracking(request):
     track = TrackTrack(request.POST or None)
     if track.is_valid():
