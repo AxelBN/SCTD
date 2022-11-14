@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 # Create your models here.
+# Crea tus modelos aqui.
 DOCUMENT_CHOICES = (
     ("CreditNote","CN"),
     ("ElectronicBill","EB")
