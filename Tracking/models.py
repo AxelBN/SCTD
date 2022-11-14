@@ -23,8 +23,7 @@ class TrackDocument(models.Model):
         choices = DOCUMENT_CHOICES,
     )
     def __str__(self):
-        return self.site
-
+        return self.user
 class trackingAdmin(admin.ModelAdmin):
     fields = ['document','date','user','site','type']
 
