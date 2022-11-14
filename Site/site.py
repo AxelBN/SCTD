@@ -1,5 +1,5 @@
 from django import forms
-from .models import Site
+from Site.models import Site
 
 class SiteSite(forms.ModelForm):
     class Meta:

@@ -6,13 +6,7 @@ DOCUMENT_CHOICES = (
     ("CreditNote","CN"),
     ("ElectronicBill","EB")
 )
-class Site(models.Model):
-    name = models.CharField(max_length=50)
-    coordinates = models.CharField(max_length=50)
-    description = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.name
 class TrackDocument(models.Model):
     document = models.CharField(max_length=50)
     date = models.DateField()
@@ -27,8 +21,6 @@ class TrackDocument(models.Model):
 class trackingAdmin(admin.ModelAdmin):
     fields = ['document','date','user','site','type']
 
-class SiteAdmin(admin.ModelAdmin):
-    fields = ['name','coordinates','description']
+
 
 admin.site.register(TrackDocument, trackingAdmin)
-admin.site.register(Site, SiteAdmin)
