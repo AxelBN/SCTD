@@ -9,7 +9,7 @@ def tracking(request):
     track = TrackTrack(request.POST or None)
     if track.is_valid():
         track.save()
-        messages.success(request, 'Volando')
+        messages.success(request, 'Está Volando')
         track = TrackTrack()
     else:
         messages.error(request, 'No creo')
