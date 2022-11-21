@@ -9,10 +9,10 @@ def tracking(request):
     track = TrackTrack(request.POST or None)
     if track.is_valid():
         track.save()
-        messages.success(request, 'Está Volando')
+        messages.success(request, 'Confirmado')
         track = TrackTrack()
     else:
-        messages.error(request, 'No creo')
+        messages.error(request, 'Error')
     context = {'track': track}
     return render(request, 'tracking.html', context)
 
