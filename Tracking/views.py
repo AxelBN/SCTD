@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.contrib import messages
 from Tracking.Tracking import TrackTrack
 from Tracking.site import SiteSite
-
 # Create your views here.
-
+def index(request):
+    return render(request, "Tracking/index.html")
 def tracking(request):
     track = TrackTrack(request.POST or None)
     if track.is_valid():

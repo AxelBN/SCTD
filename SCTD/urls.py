@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Tracking import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tracking/', include('Tracking.urls')),
-    #path('site/', include('Tracking.urls'))
+    path('index.html/', views.index),
+    path('', views.index),
+    path('tracking.html/', include('Tracking.urls'))
 ]
+
+urlpatterns += staticfiles_urlpatterns()
