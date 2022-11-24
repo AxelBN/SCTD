@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from django.contrib import messages
+from django.views import generic
+from django.views.generic.list import ListView
 from Tracking.Tracking import TrackTrack
+from Tracking.models import TrackDocument
 from Tracking.site import SiteSite
 # Create your views here.
+class document_list(generic.ListView):
+    model = TrackDocument
+    template_name = 'tracking.html'
 def index(request):
     return render(request, "Tracking/index.html")
 def tracking(request):

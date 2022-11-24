@@ -18,11 +18,13 @@ from django.urls import path, include
 from Tracking import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from Tracking.views import document_list
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index.html/', views.index),
     path('', views.index),
-    path('tracking.html/', include('Tracking.urls'))
+    path('tracking.html/', views.document_list.as_view(template_name="tracking.html"), name='documents')
 ]
 
 urlpatterns += staticfiles_urlpatterns()
