@@ -1,14 +1,19 @@
 from django.shortcuts import render
 from django.contrib import messages
+from django.utils import timezone
 from django.views import generic
 from django.views.generic.list import ListView
 from Tracking.Tracking import TrackTrack
 from Tracking.models import TrackDocument
 from Tracking.site import SiteSite
 # Create your views here.
-class document_list(generic.ListView):
+class document_list(ListView):
     model = TrackDocument
-    template_name = 'tracking.html'
+    paginate_by = 100
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
 def index(request):
     return render(request, "Tracking/index.html")
 def tracking(request):

@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index.html/', views.index),
     path('', views.index),
-    path('tracking.html/', views.document_list.as_view(template_name="tracking.html"), name='documents')
+    path('tracking_list.html/', views.document_list.as_view(template_name="tracking_list.html"), name='documents'),
+    path('tracking_list.html/tracking.html/', views.tracking),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

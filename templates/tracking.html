@@ -1,14 +1,12 @@
 {% extends 'Tracking/index.html' %}
-<html lang="en">
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 {% block content %}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tracking</title>
-  </head>
-
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Tracking</title>
+</head>
 <body>
 
 <div class="container">
@@ -22,39 +20,18 @@
 	</ul>
 	{% endif %}
 
+
     <div class="row">
 		<form action="" method="post">
 			{% csrf_token %}
 			<table>
 			{{ track }}
 			</table>
-            <h2><button type="submit" class="btn btn-primary btn-sm" value="">Track</button></h2>
+			<button type="submit" class="btn btn-primary btn-sm" value="">Añadir</button>
 		</form>
     </div>
 </div>
-<div class="card-body">
-    <ul id="datatablesSimple">
-        <thead>
-            <tr>
-                <th>Documento</th>
-            </tr>>
-        </thead>>
-        <tfoot>
-        <ul>
-        {% if TrackDocument %}
-        {% for obj in TrackDocument %}
-            <li>
-                <a href="{{ models.TrackDocument }}">{{ obj.document }}</a>
-            </li>
-        {% empty %}
-            <li>No existen documentos</li>
-        {% endfor %}
-        {% endif %}
-        </ul>
-        </tfoot>
-    </table>
-    </ul>>
-</div>>
+
 </body>
 {% endblock %}
 </html>

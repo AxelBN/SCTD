@@ -1,0 +1,49 @@
+{% extends 'Tracking/index.html' %}
+<html lang="en">
+<!doctype html>
+<html lang="en">
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documents</title>
+  </head>
+
+<body>
+    <div class="container">
+        <a href="tracking.html">Create</a>
+    </div>
+    <ul>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Documentos
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Fecha</th>
+                        <th>Usuario</th>
+                        <th>Sitio</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for obj in object_list %}
+                        <tr>
+                            <td>{{ obj.document }}</td>
+                            <td>{{ obj.date }}</td>
+                            <td>{{ obj.user }}</td>
+                            <td>{{ obj.site }}</td>
+                            <td>{{ obj.type }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </ul>
+    {% endblock %}
+</body>
+</html>
