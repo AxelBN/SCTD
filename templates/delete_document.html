@@ -1,0 +1,10 @@
+{% extends 'Tracking/index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% block content %}
+<form method="post">{% csrf_token %}
+    <p>Esta seguro que desea eliminar el documento  {{ object }}"?</p>
+    {{ track }}
+    <input class="btn btn-primary" type="submit" value="Confirmar">
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'Tracking/index.html' %}
+<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Update">
+</form>
+{% endblock %}

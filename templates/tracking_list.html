@@ -10,10 +10,12 @@
   </head>
 
 <body>
+    <h1></h1>
     <div class="container">
-        <a href="tracking.html">Create</a>
+        <a class="btn btn-primary" href="tracking.html" role="button">Crear</a>
     </div>
     <ul>
+    <h1></h1>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
@@ -28,21 +30,24 @@
                         <th>Usuario</th>
                         <th>Sitio</th>
                         <th>Tipo</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for obj in object_list %}
                         <tr>
-                            <td>{{ obj.document }}</td>
+                            <td><a href="update_documents.html/{{ obj.id }}">{{ obj.document }}</a></td>
                             <td>{{ obj.date }}</td>
                             <td>{{ obj.user }}</td>
                             <td>{{ obj.site }}</td>
                             <td>{{ obj.type }}</td>
+                            <td><a class="btn btn-danger" href="delete_document.html/{{ obj.id }}">Eliminar</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
+    </div>
     </ul>
     {% endblock %}
 </body>

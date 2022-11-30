@@ -1,11 +1,14 @@
 from django.db import models
 from django.contrib import admin
+from django.urls import reverse
 
 # Create your models here.
 DOCUMENT_CHOICES = (
     ("CreditNote", "CN"),
     ("ElectronicBill", "EB")
 )
+
+
 
 
 class Site(models.Model):
@@ -29,6 +32,9 @@ class TrackDocument(models.Model):
 
     def __str__(self):
         return self.document
+
+    def get_absolute_url(self):
+        return reverse('documents')
 
 
 class trackingAdmin(admin.ModelAdmin):
