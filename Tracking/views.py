@@ -52,6 +52,7 @@ class update_document(UpdateView, SuccessMessageMixin):
 
 class delete_document(DeleteView, SuccessMessageMixin):
     model = TrackDocument
+    form = TrackDocument
     fields = "__all__"
     def delete_documents(self):
         success_message = 'Cliente eliminado'
