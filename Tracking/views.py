@@ -59,4 +59,3 @@ class delete_document(DeleteView, SuccessMessageMixin):
         messages.success(self.request, (success_message))
         return reverse('documents')
 
-

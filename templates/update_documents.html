@@ -1,9 +1,19 @@
 {% extends 'Tracking/index.html' %}
 <!DOCTYPE html>
-{% block content %}
 <html lang="en">
+{% block content %}
+<head>
+    <div class="container">
+        <h1></h1>
+        <a class="btn btn-primary" href="/tracking_list.html" role="button">Cancelar</a>
+    </div>
+</head>
+<body>
+<h1></h1>
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input class="btn btn-primary" type="submit" value="Update">
 </form>
+</body>
 {% endblock %}
+</html>
