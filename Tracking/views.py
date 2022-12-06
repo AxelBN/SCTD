@@ -29,7 +29,7 @@ def tracking(request):
     else:
         messages.error(request, 'Error')
     context = {'track': track}
-    return render(request, 'tracking.html', context)
+    return render(request, 'Tracking/tracking.html', context)
 
 def Site(request):
     site = SiteSite(request.POST or None)
@@ -40,12 +40,12 @@ def Site(request):
     else:
         messages.error(request, 'Muy mal')
     context = {'site': site}
-    return render(request, 'site.html', context)
+    return render(request, 'Tracking/site.html', context)
 
 class update_document(UpdateView, SuccessMessageMixin):
     model = TrackDocument
     fields = "__all__"
-    template_name = 'update_documents.html'
+    template_name = 'Tracking/update_documents.html'
     success_message = 'Cliente actualizado'
     def updt_document(self):
         return reverse('documents')

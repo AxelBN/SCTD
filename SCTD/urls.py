@@ -22,9 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index.html/', views.index),
     path('', views.index),
-    path('tracking_list.html/', views.document_list.as_view(template_name="tracking_list.html"), name='documents'),
+    path('crear/', views.tracking),
+    path('tracking_list.html/', views.document_list.as_view(template_name="Tracking/tracking_list.html"), name='documents'),
     path('tracking_list.html/tracking.html/', views.tracking),
-    path('tracking_list.html/update_documents.html/<int:pk>', views.update_document.as_view(template_name="update_documents.html"), name='Update'),
+    path('tracking_list.html/update_documents.html/<int:pk>', views.update_document.as_view(template_name="Tracking/update_documents.html"), name='Update'),
     path('tracking_list.html/delete_documents.html/<int:pk>', views.delete_document.as_view(), name='eliminar'),
 ]
 
