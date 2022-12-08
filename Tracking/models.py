@@ -21,7 +21,7 @@ class Site(models.Model):
 
 
 class TrackDocument(models.Model):
-    document = models.CharField(max_length=50)
+    document = models.CharField(max_length=50, unique=True)
     date = models.DateField()
     user = models.CharField(max_length=50)
     site = models.ForeignKey('Site', on_delete=models.CASCADE)
