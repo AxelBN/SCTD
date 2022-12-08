@@ -36,7 +36,7 @@
                     {% for obj in object_list %}
                         <form method="POST" action="eliminate/{{obj.id}}">
                             <tr>
-                                <td><a href="update_documents.html/{{ obj.id }}">{{ obj.document }}</a></td>
+                                <td><a href="update_documents.html/{{ obj.id }}" class="btn">{{ obj.document }}</a></td>
                                 <td>{{ obj.date }}</td>
                                 <td>{{ obj.user }}</td>
                                 <td>{{ obj.site }}</td>
