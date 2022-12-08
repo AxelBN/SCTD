@@ -1,5 +1,5 @@
 from django.http import request
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.urls import reverse
 from django.utils import timezone
@@ -50,12 +50,9 @@ class update_document(UpdateView, SuccessMessageMixin):
     def updt_document(self):
         return reverse('documents')
 
-class delete_document(DeleteView, SuccessMessageMixin):
-    model = TrackDocument
-    form = TrackDocument
-    fields = "__all__"
-    def delete_documents(self):
-        success_message = 'Cliente eliminado'
-        messages.success(self.request, (success_message))
-        return reverse('documents')
+def delete_document(request, pk):
+    document = get_object_or_404(TrackDocument, id=pk)
+    document.delete()
+
+    return redirect('/tracking_list.html')
 
